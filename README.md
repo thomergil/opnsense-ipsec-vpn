@@ -96,9 +96,9 @@ VPN → IPsec → Tunnel Clients
 
 Apply changes
 
-## Firewall settings: NAT / WAN
+## Firewall settings: WAN rules
 
-Firewall → NAT → WAN
+Firewall → Rules → WAN
 
 Add the following three rules:
 
@@ -133,9 +133,9 @@ The result should be:
 
 Apply changes
 
-## Firewall settings: NAT / IPsec
+## Firewall settings: IPsec rules
 
-Firewall → NAT → IPsec
+Firewall → Rules → IPsec
 
 Add the following rule:
 
@@ -153,6 +153,14 @@ IPv4 *     *     *     *     *     *     *
 
 Apply changes
 
+## Firewall settings: Outbound NAT
+
+Firewall → NAT → Outbound
+
+You should not have to touch anything here. But verify that Mode is set to "Automatic outbound NAT rule generation".
+
+And verify that in the automatic rules you see the VPN network range listed under Source Networks (so 192.168.2.0/24 in this example).
+
 ## Make DNS respond to queries from the VPN
 
 Services → Unbound DNS → Access Lists
@@ -168,9 +176,9 @@ Save, Apply changes
 
 ## Optional: allow single user to create multiple VPN connections
 
-Normally, a single user cannot create more than one simultaneous VPN connection (for example, using multiple devices). There is no UI option to fix this. It requires ssh access to the OPNsense server (via System → Settings → Administration → Enable Secure Shell)
+Normally, a single user cannot create more than one simultaneous VPN connection (for example, using multiple devices). That means that a second device connecting to VPN with the same username would disconnect the first device's VPN connection. There is no UI option to fix this. It requires ssh access to the OPNsense server (via System → Settings → Administration → Enable Secure Shell).
 
-ssh into OPNsense, create `/usr/local/etc/ipsec.opnsense.d/uniqueids-override.conf` and with the following contents:
+Then ssh into the router, create file `/usr/local/etc/ipsec.opnsense.d/uniqueids-override.conf` and set it with the following contents:
 
 ```
 config setup
