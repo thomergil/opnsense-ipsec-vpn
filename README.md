@@ -153,26 +153,6 @@ IPv4 *     *     *     *     *     *     *
 
 Apply changes
 
-## Firewall settings: NAT / Floating
-
-Firewall → NAT → Floating
-
-Add the following rule:
-
-Interface: IPsec  
-TCP/IP Version: IPv4  
-Protocol: any  
-Source: IPsec net  
-Destination: LAN net
-
-The result should be:
-
-```
-IPv4 * 	IPsec net 	* 	LAN net 	* 	* 	* 
-```
-
-Apply changes
-
 ## Make DNS respond to queries from the VPN
 
 Services → Unbound DNS → Access Lists
