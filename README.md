@@ -41,6 +41,8 @@ DNS Servers: Server #3: 8.8.4.4 *(optional)*
 Phase 2 PFS Group: off  
 [all other checkboxes are off]
 
+Save, Apply changes
+
 ## Create IPsec VPN, Create Phase 1
 
 VPN → IPsec → Mobile Clients, press on "Create Phase1" at the top of the page, in the blue message bar.  
@@ -67,6 +69,8 @@ Advanced options
 Install policy: ✅  
 NAT Traversal: Enable
 
+Save, Apply changes
+
 ## Create IPsec VPN, Create Phase 2
 
 VPN → IPsec → Tunnel Settings, in the newly created Phase 1 row, press on the + in the "Commands" column. (Do **NOT** press on the + below the row, because that creates a new Phase 1 row.)
@@ -82,13 +86,15 @@ PFS key group: off
 Lifetime: 3600  
 Automatically ping host: [leave empty]
 
+Save, Apply changes
+
 ## Enable IPsec!
 
 VPN → IPsec → Tunnel Clients
 
 ✅ Enable IPsec (near the bottom of the page)
 
-Apply changes, near top of page
+Apply changes
 
 ## Firewall settings: NAT / WAN
 
@@ -125,6 +131,8 @@ The result should be:
  	IPv4 TCP/UDP  *   *   WAN address   500  (ISAKMP)          *     *     IPsec ISAKMP
  	IPv4 TCP/UDP  *   *   WAN address   4500 (IPsec NAT-T)     *     *     IPsec NAT-T
 
+Apply changes
+
 ## Firewall settings: NAT / IPsec
 
 Firewall → NAT → IPsec
@@ -142,6 +150,8 @@ The result should be:
 ```
 IPv4 *     *     *     *     *     *     *
 ```
+
+Apply changes
 
 ## Firewall settings: NAT / Floating
 
@@ -161,6 +171,8 @@ The result should be:
 IPv4 * 	IPsec net 	* 	LAN net 	* 	* 	* 
 ```
 
+Apply changes
+
 ## Make DNS respond to queries from the VPN
 
 Services → Unbound DNS → Access Lists
@@ -171,6 +183,8 @@ Access List name: 192.168.2.0/24 *(this is an open field, it does not matter)*
 Action: Allow  
 Network: 192.168.2.0 / 24 *(this needs to be the range you chose under Mobile Clients)*  
 Description: VPN DNS access
+
+Save, Apply changes
 
 ## Optional: allow single user to create multiple VPN connections
 
@@ -215,10 +229,15 @@ Password: [password of vpnuser]
 Under Authentication Settings:  
 Shared Secret: [use the Pre-Shared Key configured above]
 
-## Sources and thank-you
+## Sources (thank you!)
 
 * OPNsense setup, albeit incomplete: https://docs.opnsense.org/manual/how-tos/ipsec-road.html
 * Netgate documentation: https://docs.netgate.com/pfsense/en/latest/recipes/ipsec-mobile-ikev1-xauth.html
 * A few forum discussions that helped
-  * https://forum.opnsense.org/index.php?topic=10955.0
+  * VPN Configuration: https://forum.opnsense.org/index.php?topic=10955.0
+  * Debugging DNS: https://www.reddit.com/r/PFSENSE/comments/5y3qr1/pushing_dns_to_ipsec_clients/
+  * No internet access for VPN clients: https://forum.opnsense.org/index.php?topic=11340.0
+  * No internet access for VPN clients: https://forum.opnsense.org/index.php?topic=7477.0
+  * And more: https://forum.opnsense.org/index.php?topic=14141.0
+  * And even more: https://forum.opnsense.org/index.php?topic=14860.0;prev_next=prev#new
 * Allowing same user to connect multpile times: https://forum.opnsense.org/index.php?topic=19462.0
