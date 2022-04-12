@@ -229,3 +229,7 @@ Shared Secret: [use the Pre-Shared Key configured above]
   * And more: https://forum.opnsense.org/index.php?topic=14141.0
   * And even more: https://forum.opnsense.org/index.php?topic=14860.0;prev_next=prev#new
 * Allowing same user to connect multpile times: https://forum.opnsense.org/index.php?topic=19462.0
+
+## Unrelated notes to self
+
+These are unrelated to the above. To fix slow bootup problems timing out on ahcich0: https://forum.opnsense.org/index.php?topic=15727.0; in short, add `# notrim` to the first real line in `/etc/fstab`.
