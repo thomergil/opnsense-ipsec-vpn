@@ -230,6 +230,10 @@ Shared Secret: [use the Pre-Shared Key configured above]
   * And even more: https://forum.opnsense.org/index.php?topic=14860.0;prev_next=prev#new
 * Allowing same user to connect multpile times: https://forum.opnsense.org/index.php?topic=19462.0
 
-## Unrelated notes to self
+## Unrelated: OPNsense OpenVPN for Windows
+
+Pretty much did exactly what it says on https://docs.opnsense.org/manual/how-tos/sslvpn_client.html with the added note that I checked "Redirect Gateway" to force all client traffic over the VPN. Furthermore, I used VPN → OpenVPN → Client Export to export the user's configuration as `.ovpn` file, which can be imported directly into [OpenVPN for Windows](https://openvpn.net/client-connect-vpn-for-windows/).
+
+## Unrelated: Notes to self
 
 These are unrelated to the above. To fix slow bootup problems timing out on ahcich0: https://forum.opnsense.org/index.php?topic=15727.0; in short, add `# notrim` to the first real line in `/etc/fstab`.
