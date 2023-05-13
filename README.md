@@ -5,7 +5,7 @@ Getting IPsec VPN on OPNsense to work with iOS and macOS was too difficult.
 ## Versions
 
 OPNsense 23.1.7_3  
-iOS 16.4.1 (a)
+iOS 16.4.1 (a)  
 macOS Monterey (Version 12.3)
 
 ## Add group "VPN" [optional]
@@ -66,7 +66,7 @@ DH key group: 2, 5, 14, 15, 16, 17, 18
 Advanced options  
 [all uncheck unless otherwise noted]  
 Install policy: ✅  
-NAT Traversal: Enable
+NAT Traversal: Enable  
 Lifetime: 28800
 
 Save, Apply changes
