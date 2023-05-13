@@ -4,8 +4,8 @@ Getting IPsec VPN on OPNsense to work with iOS and macOS was too difficult.
 
 ## Versions
 
-OPNsense 22.1.5  
-iOS 15.3.1  
+OPNsense 23.1.7_3  
+iOS 16.4.1 (a)
 macOS Monterey (Version 12.3)
 
 ## Add group "VPN" [optional]
@@ -62,12 +62,12 @@ Encryption algorithm: AES
 Encryption algorithm: 256  
 Hash algorithm: SHA256, SHA384, SHA512  
 DH key group: 2, 5, 14, 15, 16, 17, 18  
-Lifetime: 28800
 
 Advanced options  
 [all uncheck unless otherwise noted]  
 Install policy: ✅  
 NAT Traversal: Enable
+Lifetime: 28800
 
 Save, Apply changes
 
@@ -90,7 +90,7 @@ Save, Apply changes
 
 ## Enable IPsec!
 
-VPN → IPsec → Tunnel Clients
+VPN → IPsec → Tunnel Settings
 
 ✅ Enable IPsec (near the bottom of the page)
 
@@ -192,6 +192,7 @@ Then trigger a VPN restart through the UI.
 Yes, this is ridiculous, but it did solve DNS problems for me and a number of other problems.
 
 ## Configuring IPsec VPN on iPhone
+First make sure that your iPhone is outside of your WLAN.
 
 Settings → VPN → Add VPN Configuration...
 
