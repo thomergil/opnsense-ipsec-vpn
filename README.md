@@ -220,7 +220,7 @@ Shared Secret: [use the Pre-Shared Key configured above]
 
 ## Sources (thank you!)
 
-* OPNsense setup, albeit incomplete: https://docs.opnsense.org/manual/how-tos/ipsec-road.html
+* OPNsense setup, albeit incomplete: https://docs.opnsense.org/manual/vpnet.html
 * Netgate documentation: https://docs.netgate.com/pfsense/en/latest/recipes/ipsec-mobile-ikev1-xauth.html
 * A few forum discussions that helped
   * VPN Configuration: https://forum.opnsense.org/index.php?topic=10955.0
