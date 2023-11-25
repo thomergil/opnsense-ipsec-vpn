@@ -73,7 +73,7 @@ Save, Apply changes
 
 ## Create IPsec VPN, Create Phase 2
 
-VPN → IPsec → Tunnel Settings, in the newly created Phase 1 row, press on the + in the "Commands" column. (Do **NOT** press on the + below the row, because that creates a new Phase 1 row.)
+VPN → IPsec → Tunnel Settings [legacy], in the newly created Phase 1 row, press on the + in the "Commands" column. (Do **NOT** press on the + below the row, because that creates a new Phase 1 row.)
 
 Mode: Tunnel IPv4  
 Description: *(something descriptive or leave empty)*  
@@ -176,7 +176,26 @@ Save, Apply changes
 
 ## Optional: allow single user to create multiple VPN connections
 
-Normally, a single user cannot create more than one simultaneous VPN connection (for example, using multiple devices). That means that a second device connecting to VPN with the same username would disconnect the first device's VPN connection. There is no UI option to fix this. It requires ssh access to the OPNsense server (via System → Settings → Administration → Enable Secure Shell).
+Normally, a single user cannot create more than one simultaneous VPN connection (for example, using multiple devices). That means that a second device connecting to VPN with the same username would disconnect the first device's VPN connection.
+
+### New method
+
+You can change this by modifying/editing your Phase 1 and change the "Unique" parameter to one of the following values:
+
+- Replace
+  - A new connection will replace any existing one.
+- Keep
+  - A new connection will be blocked while there is an existing one
+- No
+  - Multiple connections can be made
+- Never
+  - The system will not check for multiple connections
+
+Then save and apply the changes.
+
+### Old Method
+
+Previously, there was no UI option to fix this, so it required ssh access to the OPNsense server (via System → Settings → Administration → Enable Secure Shell).
 
 Then ssh into the router, create file `/usr/local/etc/ipsec.opnsense.d/uniqueids-override.conf` and set it with the following contents:
 
