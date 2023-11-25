@@ -73,7 +73,7 @@ Save, Apply changes
 
 ## Create IPsec VPN, Create Phase 2
 
-VPN → IPsec → Tunnel Settings, in the newly created Phase 1 row, press on the + in the "Commands" column. (Do **NOT** press on the + below the row, because that creates a new Phase 1 row.)
+VPN → IPsec → Tunnel Settings [legacy], in the newly created Phase 1 row, press on the + in the "Commands" column. (Do **NOT** press on the + below the row, because that creates a new Phase 1 row.)
 
 Mode: Tunnel IPv4  
 Description: *(something descriptive or leave empty)*  
