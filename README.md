@@ -27,14 +27,16 @@ Group membership: make sure that "Member Of" contains "VPN"
 
 ## Create IPsec VPN, configure Mobile Clients
 
-VPN → IPsec → Mobile Clients
+VPN → IPsec → Mobile Clients [legacy]
 [unless otherwise noted, all checkboxes are off]
 ✅ Enable IPsec Mobile Client Support
-Backend for authentication: Local Database
-(Optional, if you created a "VPN" group above): Enforce local group: VPN
 Virtual IPv4 Address Pool: ✅ Provide a virtual IPv4 address to clients
 Virtual IPv4 Address Pool: 192.168.2.0/24
-DNS Servers: ✅ Provide a DNS server list to clients
+
+VPN → IPsec → Mobile & Advanced Settings → General
+(Optional, if you created a "VPN" group above): Enforce local group (Xauth): VPN
+
+VPN → IPsec → Mobile & Advanced Settings → Attr
 DNS Servers: Server #1: 192.168.1.1 *(this needs to be the local IP of your OPNsense router)*
 DNS Servers: Server #2: 8.8.8.8 *(optional)*
 DNS Servers: Server #3: 8.8.4.4 *(optional)*
